@@ -18,7 +18,7 @@ class ParkingFactory extends Factory
             'number'   => rand(1, 100),
             'city'     => $this->faker->city(),
             'state'    => 'Bahia',
-            'zipcode'  => $this->faker->postcode(),
+            'postcode' => $this->faker->postcode(),
             'spaces'   => rand(1, 100),
         ];
     }

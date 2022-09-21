@@ -11,6 +11,8 @@
 |
 */
 
+use App\Models\User;
+
 uses(Tests\TestCase::class)->in('Feature');
 
 /*
@@ -39,7 +41,14 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
+function createUser(array $attributes = [], bool $actingAs = true): User
 {
-    // ..
+    $user = User::factory()
+                ->create($attributes);
+
+    if ($actingAs) {
+        test()->actingAs($user);
+    }
+
+    return $user;
 }
