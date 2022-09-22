@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Livewire\ParkingComponent;
+use App\Http\Livewire\Parking\ParkingComponent;
 use App\Models\Parking;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
@@ -17,7 +17,7 @@ it('should be able to render component', function () {
 
     $this->get(route('parking-component'))
          ->assertSuccessful()
-         ->assertSeeLivewire('parking-component');
+         ->assertSeeLivewire('parking.parking-component');
 });
 
 it('should be able to render parkings', function () {

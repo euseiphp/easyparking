@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Parking;
 
 use App\Enum\Status;
 use App\Http\Livewire\Traits\SweetAlert;
@@ -11,7 +11,6 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
@@ -59,12 +58,12 @@ class ParkingComponent extends Component
 
     public function mount()
     {
-        $this->user = Auth::user();
+        $this->user = user();
     }
 
     public function render(): Factory|View|Application
     {
-        return view('livewire.parking-component', [
+        return view('livewire.parking.parking-component', [
             'parkings' => $this->data(),
         ]);
     }

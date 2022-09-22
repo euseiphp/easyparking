@@ -28,6 +28,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Service wherePrice($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Service whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property Status $status
+ * @method static \Illuminate\Database\Eloquent\Builder|Service whereStatus($value)
  */
 class Service extends Model
 {

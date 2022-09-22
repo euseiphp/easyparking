@@ -3,17 +3,20 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Throwable;
 
 /**
  * App\Models\User
  *
  * @property int $id
  * @property string $name
+ * @property string $avatar
  * @property string $phone
  * @property string $email
  * @property \Illuminate\Support\Carbon|null $email_verified_at
@@ -39,6 +42,8 @@ use Laravel\Sanctum\HasApiTokens;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Parking[] $parking
+ * @property-read int|null $parking_count
  */
 class User extends Authenticatable
 {
@@ -50,6 +55,19 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function avatar(): Attribute
+    {
+        return Attribute::make(
+            get: function () {
+                try {
+                    return sprintf('https://ui-avatars.com/api/?name=%s&color=7F9CF5&background=DAC322&color=FFF', $this->name);
+                } catch (Throwable $e) {
+                    return null;
+                }
+            }
+        );
+    }
 
     protected $casts = [
         'email_verified_at' => 'datetime',

@@ -39,6 +39,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @method static \Illuminate\Database\Eloquent\Builder|Attendance whereUserId($value)
  * @mixin \Eloquent
  * @property-read \App\Models\User $user
+ * @property-read \App\Models\Car|null $car
+ * @property-read \App\Models\Parking $parking
+ * @property-read \App\Models\Service|null $service
  */
 class Attendance extends Model
 {

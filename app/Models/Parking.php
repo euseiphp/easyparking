@@ -44,6 +44,10 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
  * @method static \Illuminate\Database\Eloquent\Builder|Parking wherePostcode($value)
  * @mixin \Eloquent
  * @property-read \App\Models\User $user
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Attendance[] $attendance
+ * @property-read int|null $attendance_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Car[] $car
+ * @property-read int|null $car_count
  */
 class Parking extends Model
 {
