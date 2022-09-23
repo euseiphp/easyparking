@@ -20,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
         View::share('routes', [
             'Inicio'          => 'home',
             'Estacionamentos' => 'parking-component',
+            'Atendimentos'    => 'attendance-component',
         ]);
     }
 }

@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int|null $service_id
  * @property string|null $description
  * @property string|null $price
- * @property int $status
+ * @property AttendanceStatus $status
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $finished_at
@@ -49,8 +49,9 @@ class Attendance extends Model
     use BelongsToUser;
 
     protected $casts = [
-        'status' => AttendanceStatus::class,
-        'price'  => 'decimal:2',
+        'status'      => AttendanceStatus::class,
+        'price'       => 'decimal:2',
+        'finished_at' => 'datetime',
     ];
 
     public function parking(): BelongsTo

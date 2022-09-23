@@ -1,7 +1,8 @@
 @props([
-    'label'     => null,
-    'column'    => null,
-    'sort'      => null,
+    'label' => null,
+    'column' => null,
+
+    'sort' => null,
     'direction' => null,
 ])
 

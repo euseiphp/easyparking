@@ -13,15 +13,16 @@
     <x-table class="mt-4" :items="$parkings">
         <x-table.head>
             <x-table.tr>
-                <x-table.th column="id" :sort="$sort" :direction="$direction">#</x-table.th>
-                <x-table.th column="name" :sort="$sort" :direction="$direction">Nome</x-table.th>
-                <x-table.th column="spaces" :sort="$sort" :direction="$direction">Quantidade de Vagas</x-table.th>
-                <x-table.th column="spaces" :sort="$sort" :direction="$direction">Criado</x-table.th>
-                <x-table.th column="spaces" :sort="$sort" :direction="$direction">Atualizado</x-table.th>
+                <x-table.th column="id" :sort="$sort" :direction="$direction" label="#" />
+                <x-table.th column="name" :sort="$sort" :direction="$direction" label="Nome" />
+                <x-table.th column="spaces" :sort="$sort" :direction="$direction" label="Quantidade de Vagas" />
+                <x-table.th column="spaces" :sort="$sort" :direction="$direction" label="Criado" />
+                <x-table.th column="spaces" :sort="$sort" :direction="$direction" label="Atualizado" />
                 <x-table.th></x-table.th>
             </x-table.tr>
         </x-table.head>
         <x-table.body>
+            @php /** @var \App\Models\Parking $parking */ @endphp
             @forelse ($parkings as $parking)
                 <x-table.tr>
                     <x-table.td>{{ $parking->id }}</x-table.td>

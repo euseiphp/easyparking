@@ -73,8 +73,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function attendance()
+    {
+        return $this->hasMany(Attendance::class);
+    }
+
     public function parking(): HasMany
     {
         return $this->hasMany(Parking::class);
+    }
+
+    public function car()
+    {
+        return $this->hasMany(Car::class);
     }
 }
