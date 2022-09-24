@@ -34,6 +34,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property-read \App\Models\User $user
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Attendance[] $attendance
  * @property-read int|null $attendance_count
+ * @property string $owner
+ * @property string $contact
+ * @method static \Illuminate\Database\Eloquent\Builder|Car whereContact($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Car whereOwner($value)
  */
 class Car extends Model
 {

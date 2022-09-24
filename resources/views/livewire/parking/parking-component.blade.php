@@ -31,8 +31,8 @@
                     <x-table.td>{{ $parking->created_at->format('d/m/Y H:i') }}</x-table.td>
                     <x-table.td>{{ $parking->updated_at->format('d/m/Y H:i') }}</x-table.td>
                     <x-table.td>
-                        <x-button small primary>
-                            <x-svg.pencil class="h-4 w-4" wire:click="append({{ $parking }})" />
+                        <x-button small primary wire:click="append({{ $parking }})">
+                            <x-svg.pencil class="h-4 w-4" />
                         </x-button>
                         <x-button small danger wire:click="confirmingBeforeDestroy({{ $parking->id }})">
                             <x-svg.trash class="h-4 w-4" />

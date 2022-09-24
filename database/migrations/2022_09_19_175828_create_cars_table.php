@@ -11,6 +11,8 @@ return new class () extends Migration {
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
+            $table->string('owner');
+            $table->string('contact');
             $table->string('brand', 100);
             $table->string('model', 100);
             $table->string('color', 10);

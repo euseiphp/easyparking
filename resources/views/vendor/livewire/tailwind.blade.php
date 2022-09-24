@@ -1,5 +1,5 @@
 <div>
-    <div role="navigation" aria-label="Pagination Navigation" class="mt-4 mb-10 flex h-16 items-center justify-between border border-gray-200 bg-yellow-50 px-4">
+    <div role="navigation" aria-label="Pagination Navigation" class="mt-4 mb-10 flex h-16 items-center justify-between border border-gray-200 rounded-lg bg-yellow-50 px-4">
         <div class="flex flex-1 items-center justify-between">
 
             <div class="flex items-center">

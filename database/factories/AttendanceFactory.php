@@ -15,6 +15,7 @@ class AttendanceFactory extends Factory
     public function definition(): array
     {
         return [
+            'code'        => sprintf('%02d%02d', 1669, random()),
             'user_id'     => User::factory(),
             'car_id'      => Car::factory(),
             'parking_id'  => Parking::factory()->actived(),

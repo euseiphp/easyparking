@@ -9,7 +9,7 @@ return [
         ],
 
         'badge' => [
-            '1' => 'secondary',
+            '1' => 'danger',
             '3' => 'success',
         ],
     ],

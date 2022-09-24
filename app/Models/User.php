@@ -44,6 +44,10 @@ use Throwable;
  * @mixin \Eloquent
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Parking[] $parking
  * @property-read int|null $parking_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Attendance[] $attendance
+ * @property-read int|null $attendance_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Car[] $car
+ * @property-read int|null $car_count
  */
 class User extends Authenticatable
 {

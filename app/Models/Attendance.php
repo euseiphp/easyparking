@@ -42,6 +42,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property-read \App\Models\Car|null $car
  * @property-read \App\Models\Parking $parking
  * @property-read \App\Models\Service|null $service
+ * @property string $code
+ * @method static \Illuminate\Database\Eloquent\Builder|Attendance whereCode($value)
  */
 class Attendance extends Model
 {

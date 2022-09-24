@@ -10,6 +10,11 @@ class CarFactory extends Factory
     public function definition(): array
     {
         return [
+            'owner'   => $this->faker->name(),
+            'contact' => $this->faker->randomElement([
+                $this->faker->phoneNumber(),
+                $this->faker->unique()->safeEmail(),
+            ]),
             'user_id'        => User::factory(),
             'brand'          => $this->faker->word(),
             'model'          => $this->faker->word(),

@@ -13,6 +13,7 @@ return new class () extends Migration {
     {
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
+            $table->string('code');
             $table->foreignIdFor(User::class)->nullable()->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Car::class)->nullable()->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Parking::class)->constrained()->cascadeOnDelete();
